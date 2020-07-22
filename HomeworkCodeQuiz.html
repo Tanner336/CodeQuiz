@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div id="question-container" class="hide">
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="button-grid">
+        <button class="button">Answer 1</button>
+        <button class="button">Answer 2</button>
+        <button class="button">Answer 3</button>
+        <button class="button">Answer 4</button>
+        <table>
+          <tr>
+            <th>High Score</th>
+            <th>Initials</th>
+          </tr>
+        </table>
+
+
+      </div>
+    </div>
+    <div class="correct hide">
+      Correct:
+    </div>
+    <div class="incorrect hide">
+      Incorrect:
+    </div>
+
+    <div><button id="next-button" class="hide">Next</button></div>
+
+    <div class="controls">
+      <button id="start-button" class="start-button button">Start</button>
+      <button id="try-again" class="start-button button">Try again</button>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+  <div class="timer">
+    <p id="countdown">
+      75
+
+    </p>
+
+  </div>
+
+  <script src="./HomeworkCodeQuiz.js"></script>
+
+</body>
