@@ -288,10 +288,10 @@ const tryAgainButton = document.getElementById('try-again')
 
 
 const questionContainerEl = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonElement = document.getElementById('answer-buttons')
+const questionEl = document.getElementById('question')
+const answerBtnEl = document.getElementById('answer-buttons')
 
-let shuffleQuestions, currentQuestionIndex
+let rearrangeQuestions, questionIndex
 
 var correct = document.getElementById('correct')
 var numcorrect = 0
@@ -318,26 +318,26 @@ function firstStart() {
 
 function startGame() {
   startButton.classList.add("hide")
-  shuffleQuestions = questionArr.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
+  rearrangeQuestions = questionArr.sort(() => Math.random() - .5)
+  questionIndex = 0
   questionContainerEl.setAttribute("class", "")
   numcorrect = 0
   numincorrect = 0
   time = 75
 
-  setNextQuestion()
+  setNextQ()
 };
 
-function setNextQuestion() {
+function setNextQ() {
   resetState()
-  showQuestion(shuffleQuestions[currentQuestionIndex])
-  currentQuestionIndex++;
+  displayQuestion(rearrangeQuestions[questionIndex])
+  questionIndex++;
 };
 
 
-function showQuestion(question) {
-  questionElement.innerHTML = question.question
-  console.log(questionElement.innerHTML)
+function displayQuestion(question) {
+  questionEl.innerHTML = question.question
+  console.log(questionEl.innerHTML)
   question.answers.forEach(answers => {
     const button = document.createElement('button')
     button.innerText = answers.text
@@ -346,15 +346,15 @@ function showQuestion(question) {
 
     }
     button.addEventListener('click', selectAnswer)
-    answerButtonElement.appendChild(button)
+    answerBtnEl.appendChild(button)
   });
 }
 
 function resetState() {
   nextButton.setAttribute("class", "hide")
-  while (answerButtonElement.firstChild)
-    answerButtonElement.removeChild(answerButtonElement.firstChild)
-  showQuestion
+  while (answerBtnEl.firstChild)
+    answerBtnEl.removeChild(answerBtnEl.firstChild)
+  displayQuestion
 }
 
 function selectAnswer(e) {
@@ -362,27 +362,27 @@ function selectAnswer(e) {
   const answerSelected = selectButton.textContent
   console.log(selectButton.textContent)
   var correct = false
-  questionArr[currentQuestionIndex - 1].answers.forEach(answer => {
+  questionArr[questionIndex - 1].answers.forEach(answer => {
     if (answer.text === answerSelected) {
       correct = answer.correct
       if (correct) {
-        questionElement.textContent = "Correct!"
+        questionEl.textContent = "Correct!"
         numcorrect++
       }
       else {
-        questionElement.textContent = "Wrong!"
+        questionEl.textContent = "Wrong!"
         numincorrect++
       }
     }
 
   })
-  while (answerButtonElement.firstChild)
-    answerButtonElement.removeChild(answerButtonElement.firstChild)
+  while (answerBtnEl.firstChild)
+    answerBtnEl.removeChild(answerBtnEl.firstChild)
 
   nextButton.setAttribute("class", "")
   //setStatusClass()
 };
-nextButton.addEventListener('click', setNextQuestion)
+nextButton.addEventListener('click', setNextQ)
 
 
 
@@ -403,12 +403,12 @@ function updateCountdown() {
     var list = []
     var initials = prompt("Please put your initials")
     highScoreName.push({initials: initials, score: numcorrect});
-    questionElement.setAttribute("class", "")
-    questionElement.textContent = "Times Up!"
-      while (answerButtonElement.firstChild)
-      answerButtonElement.removeChild(answerButtonElement.firstChild)
+    questionEl.setAttribute("class", "")
+    questionEl.textContent = "Times Up!"
+      while (answerBtnEl.firstChild)
+      answerBtnEl.removeChild(answerBtnEl.firstChild)
     highScoreName.forEach(score =>{list.push("<li> initials: " + score.initials + " Score: " + score.score + "</li>")});
-    answerButtonElement.innerHTML = "<ul>" + list + "</ul>"
+    answerBtnEl.innerHTML = "<ul>" + list + "</ul>"
     localStorage.setItem("finalscore", JSON.stringify(highScoreName))
   }
 
