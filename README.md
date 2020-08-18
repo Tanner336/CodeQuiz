@@ -1,5 +1,7 @@
 # CodeQuiz
 
+https://tanner336.github.io/CodeQuiz/
+
 This is a simple Code Quiz for Beginners
 
 The questions are easy and based off of what we have learned in our first few weeks of class
