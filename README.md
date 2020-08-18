@@ -24,3 +24,8 @@ The buttons work and the try again button goes right into the game by calling up
 
 ![CodeQuiz-screenshot](assets\codequiz.png)
 ![CodeQuiz-gif](assets\codequiz.gif)
+
+Uses:
+HTML
+CSS
+Javascript
