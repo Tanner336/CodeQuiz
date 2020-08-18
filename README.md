@@ -21,3 +21,6 @@ Once the timer is up, the game prompts you to give your initials, though there i
 After you submit you initials the game saves your score using local storage and displays the scores from multiple attempts
 
 The buttons work and the try again button goes right into the game by calling upon the startGame function again
+
+![CodeQuiz-screenshot](assets\codequiz.png)
+![CodeQuiz-gif](assets\codequiz.gif)
