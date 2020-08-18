@@ -23,6 +23,8 @@ After you submit you initials the game saves your score using local storage and 
 The buttons work and the try again button goes right into the game by calling upon the startGame function again
 
 ![CodeQuiz-screenshot](assets\codequiz.png)
+![CodeQuiz-screenshot](assets\codequiz2.png)
+
 ![CodeQuiz-gif](assets\codequiz.gif)
 
 Uses:
