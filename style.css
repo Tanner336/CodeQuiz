@@ -12,6 +12,27 @@ body {
   width: 100vw;
   height: 50vw;
   background-color: #5943d3;
+  animation-name: color-change;
+  animation-duration: 85s;
+}
+
+@keyframes color-change {
+  0% {background-color: #5943d3;}
+  5% {background-color: #5f4ad4;}
+  10% {background-color: #5694db;}
+  15% {background-color: #60b3da;}
+  25% {background-color: #6ad6a9;}
+  35% {background-color: #65d6a1;}
+  45% {background-color: #46ce68;}
+  55% {background-color: #19aa19;}
+  65% {background-color: #66ce46;}
+  75% {background-color: #98d665;}
+  80% {background-color: #bfd66a;}
+  85% {background-color: #dad260;}
+  90% {background-color: #dba156;}
+  95% {background-color: #d44f4a;}
+  100% {background-color: #5943d3;}
+
 }
 
 .welcome {
@@ -80,7 +101,12 @@ button:hover {
   box-shadow: 0 0 10px 2px;
 }
 
-
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: bolder;
+  padding: 1%;
+}
 
 .center {
   margin: 0;
@@ -92,13 +118,24 @@ button:hover {
 }
 
 .timer {
-  height: 80px;
-  width: 105px;
+  height: 64px;
+  width: 115px;
   position: absolute;
   top: 0px;
   right: 0px;
   margin: 12px;
   border: 3px solid black;
+}
+
+#countdown {
+  height: 39px;
+  width: 93px;
+  margin: 7%;
+  font-weight: bolder;
+  color: white;
+  background-color: #5943d3;
+  animation-name: color-change;
+  animation-duration: 85s;
 }
 
 p {
@@ -108,4 +145,13 @@ p {
   font-size: 17px;
   top: 0px;
   right: 0px;
+}
+
+#next-button {
+  border: 5px solid;
+  background-color: yellow;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: purple;
+  outline: none;
 }

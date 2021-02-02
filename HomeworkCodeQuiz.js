@@ -318,6 +318,7 @@ function firstStart() {
 
 function startGame() {
   startButton.classList.add("hide")
+  tryAgainButton.classList.add("hide")
   rearrangeQuestions = questionArr.sort(() => Math.random() - .5)
   questionIndex = 0
   questionContainerEl.setAttribute("class", "")
@@ -396,7 +397,7 @@ function updateCountdown() {
 
   time = seconds < 10 ? '0' + seconds : seconds;
 
-  countdownEl.innerHTML = seconds + " seconds lefts";
+  countdownEl.innerHTML = seconds + " seconds";
   time--;
 
   if (time === 0) {
@@ -410,6 +411,8 @@ function updateCountdown() {
     highScoreName.forEach(score =>{list.push("<li> initials: " + score.initials + " Score: " + score.score + "</li>")});
     answerBtnEl.innerHTML = "<ul>" + list + "</ul>"
     localStorage.setItem("finalscore", JSON.stringify(highScoreName))
+    setInterval(updateCountdown, 0);
+
   }
 
 
